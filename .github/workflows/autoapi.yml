@@ -28,6 +28,8 @@ jobs:
     - name: Install requests #安装requests
       run: |
         pip install requests
+    - run: |
+        pip install --upgrade pip
     - name: Read config from secrets  #读取机密
       env: 
         CONFIG_ID: ${{ secrets.CONFIG_ID }} # secrets_id 提供
