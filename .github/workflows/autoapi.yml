@@ -42,7 +42,7 @@ jobs:
         sed -i '12 r configkey.txt' temp.py
     - name: Test Api #Api调用
       run: | 
-        echo `date +"%Y-%m-%d %H:%M:%S"` begin > time.log
+        echo `date +"%Y-%m-%d %H:%M:%S"` begin = time.log
         python temp.py
     - name: Delete secrets config #删除机密
       run: | 
