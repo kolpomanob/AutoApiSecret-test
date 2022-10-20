@@ -10,7 +10,7 @@ on:
   #  branches: 
   #    - master
   schedule:
-    - cron: "59  * * * *"
+    - cron: "0 22 * * 1-5"
   watch:
     types: [started]
    
@@ -20,7 +20,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id  # 自己点的 start
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v1
     - name: Set up Python #安装python
       uses: actions/setup-python@v4
       with:
@@ -28,6 +28,7 @@ jobs:
     - name: Install requests #安装requests
       run: |
         pip install requests
+    - name: Upgrade pip
     - run: |
         pip install --upgrade pip
     - name: Read config from secrets  #读取机密
